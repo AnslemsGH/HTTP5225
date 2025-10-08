@@ -8,7 +8,7 @@
 <body>
     <h1>Schools</h1>
     <div>
-        <?php include('nav.php') ?>
+        <?php include('nav.php'); ?>
     </div>
     <hr>
     <div>
@@ -24,8 +24,8 @@
 
         foreach($schools as $school){
             echo $school['School Name'] . 
-            '<form>
-            <input type="hidden" name="id" value="123">
+            '<form action="editschool.php" method="GET">
+            <input type="hidden" name="id" value="' . $school['id'] . '">
             <input type="submit" value="Edit">
             </form>'
             .'<br>';

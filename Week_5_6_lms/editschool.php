@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add School</title>
+    <title>Edit School</title>
 </head>
 <body>
-    <h1>Add School</h1>
+    <h1>Edit School</h1>
     <hr>
     <div>
         <?php include('nav.php'); ?>
@@ -17,6 +17,15 @@
 
         <?php 
             require('connect.php');
+
+            if($_SERVER['REQUEST_METHOD'] == 'GET'){
+                $id = $_GET['id'];
+                $query = "SELECT * FROM schools WHERE id = " . $id;
+                $result = mysqli_info($connect, $query);
+                $school = $result -> fetch_assoc();
+            }
+
+
             if(isset($_POST['addSchool'])){
                 //print_r($_POST);
                 $boardName=$_POST['boardName'];
@@ -38,7 +47,7 @@
         ?>
 
         <form action="addschool.php" method="POST">
-            <input type="text" name="boardName" placeholder="Board Name">
+            <input type="text" name="boardName" placeholder="Board Name" value="<?php echo $school['Board Name'] ?>">
             <br>
             <input type="text" name="schoolName" placeholder="School Name">
             <br>
