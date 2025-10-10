@@ -4,14 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>All Schools</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-    <h1>Schools</h1>
+    <h1 style="text-align: center;">Schools</h1>
     <div>
         <?php include('nav.php'); ?>
     </div>
     <hr>
-    <div>
+    <div class="row">
         <?php
 
         require('connect.php');
@@ -22,20 +24,45 @@
 
         // echo '<pre>'.print_r($schools).'</pre>'
 
-        foreach($schools as $school){
-            echo $school['School Name'] . 
-            '<form action="editschool.php" method="GET">
-            <input type="hidden" name="id" value="' . $school['id'] . '">
-            <input type="submit" value="Edit">
-            </form>
-            <form action="deleteschool.php" method="POST">
-            <input type="hidden" name="id" value="' . $school['id'] . '">
-            <input type="submit" value="Delete">
-            </form>'
-            .'<br>';
-        };
-
-
+        foreach ($schools as $school) {
+                echo '<div class="col-md-4 mt-2 mb-2">
+                    <div class="card">
+                      <div class="card-body">
+                        <h3 class="card-title">' . $school['School Name'] . '</h3>
+                        <h4 class="card-title">Board Name: ' . $school['Board Name'] . '</h4>
+                        <p class="card-text">School Number: ' . $school['School Number'] . '</p>
+                        <p class="card-text">School Level: ' . $school['School Level'] . '</p>
+                        <span class="badge bg-secondary">School Language: ' . $school['School Language'] . '</span>
+                        <span class="badge bg-info">School Type: ' . $school['School Type'] . '</span>
+                        <p class="card-text">School Special Conditions: ' . $school['School Special Conditions'] . '</p>
+                        <span class="badge bg-secondary">Phone: ' . $school['Phone'] . '</span>
+                        <span class="badge bg-info"> Email: ' . $school['Email'] . '</span>
+                        <p class="card-text">Fax: ' . $school['Fax'] . '</p>
+                        <p class="card-text">Address: ' . $school['Street'] . ', ' . $school['City'] . ', ' . $school['Province'] . ', ' . $school['Postal Code'] .'</p>
+                        <p class="card-text">Grade Range: ' . $school['Grade Range'] . '</p>
+                        <p class="card-text">Date Open: ' . $school['Date Open'] . '</p>
+                        <p class="card-text">Website: ' . $school['Website'] . '</p>
+                        <p class="card-text">Board Website: ' . $school['Board Website'] . '</p>
+                      </div>
+                      <div class="card-footer">
+                        <div class="row">
+                          <div class="col">
+                            <form action="editschool.php">
+                              <input type="hidden" name="id" value="' . $school['id'] . '">
+                              <button type="submit" name="editschool" class="btn btn-sm btn-primary">Edit</button>
+                            </form>
+                          </div>
+                          <div class="col text-end">
+                            <form action="deleteschool.php" method="POST">
+                                <input type="hidden" name="id" value="' . $school['id'] . '">
+                                <button type="submit" name="deleteSchool" class="btn btn-sm btn-danger">Delete</button>
+                              </form>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>'; 
+            };
         ?>
         <style>
             .Box{
