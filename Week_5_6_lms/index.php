@@ -27,6 +27,10 @@
             '<form action="editschool.php" method="GET">
             <input type="hidden" name="id" value="' . $school['id'] . '">
             <input type="submit" value="Edit">
+            </form>
+            <form action="deleteschool.php" method="POST">
+            <input type="hidden" name="id" value="' . $school['id'] . '">
+            <input type="submit" value="Delete">
             </form>'
             .'<br>';
         };

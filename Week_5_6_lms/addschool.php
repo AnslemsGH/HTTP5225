@@ -19,12 +19,26 @@
             require('connect.php');
             if(isset($_POST['addSchool'])){
                 //print_r($_POST);
-                $boardName=$_POST['boardName'];
-                $schoolName=$_POST['schoolName'];
-                $schoolNumber=$_POST['schoolNumber'];
-                $schoolLevel=$_POST['schoolLevel'];
+            $boardName = $_POST['boardName'];
+            $schoolName = $_POST['schoolName'];
+            $schoolNumber = $_POST['schoolNumber'];
+            $schoolLevel = $_POST['schoolLevel'];
+            $schoolLanguage = $_POST['schoolLanguage'];
+            $schoolType = $_POST['schoolType'];
+            $schoolSpecialConditions = $_POST['schoolSpecialConditions'];
+            $street = $_POST['street'];
+            $city = $_POST['city'];
+            $province = $_POST['province'];
+            $postalCode = $_POST['postalCode'];
+            $phone = $_POST['phone'];
+            $fax = $_POST['fax'];
+            $gradeRange = $_POST['gradeRange'];
+            $email = $_POST['email'];
+            $dateOpen = $_POST['dateOpen'];
+            $website = $_POST['website'];
+            $boardWebsite = $_POST['boardWebsite'];;
 
-                $query = "INSERT INTO schools (`Board Name`, `School Number`, `School Name`, `School Level`) VALUES ('$boardName', '$schoolNumber', '$schoolName', '$schoolLevel')";
+                $query = "INSERT INTO schools (`Board Name`, `School Number`, `School Name`, `School Level`, `School Language`, `School Type`, `School Special Conditions`, `Street`, `City`, `Province`, `Postal Code`, `Phone`, `Fax`, `Grade Range`, `Date Open`, `Email`, `Website`, `Board Website`) VALUES ('$boardName', '$schoolNumber', '$schoolName', '$schoolLevel', '$schoolLanguage', '$schoolType', '$schoolSpecialConditions', '$street', '$city', '$province', '$postalCode', '$phone', '$fax', '$gradeRange', '$email', '$dateOpen', '$website', '$boardWebsite')";
                 
                 $school = mysqli_query($connect, $query);
                 if($school){
@@ -38,13 +52,41 @@
         ?>
 
         <form action="addschool.php" method="POST">
-            <input type="text" name="boardName" placeholder="Board Name">
+            <input type="text" name="boardName" placeHolder="Board Name">
             <br>
-            <input type="text" name="schoolName" placeholder="School Name">
+            <input type="text" name="schoolName" placeHolder="School Name">
             <br>
-            <input type="number" name="schoolNumber" placeholder="School Number">
+            <input type="number" name="schoolNumber" placeHolder="School Number">
             <br>
             <input type="text" name="schoolLevel" placeholder="School Level">
+            <br>
+            <input type="text" name="schoolLanguage" placeholder="School Language">
+            <br>
+            <input type="text" name="schoolType" placeholder="School Type">
+            <br>
+            <input type="text" name="schoolSpecialConditions" placeholder="School Special Conditions">
+            <br>
+            <input type="text" name="street" placeholder="Street">
+            <br>
+            <input type="text" name="city" placeholder="City">
+            <br>
+            <input type="text" name="province" placeholder="Province">
+            <br>
+            <input type="text" name="postalCode" placeholder="Postal Code">
+            <br>
+            <input type="text" name="phone" placeholder="Phone">
+            <br>
+            <input type="text" name="fax" placeholder="Fax">
+            <br>
+            <input type="text" name="gradeRange" placeholder="Grade Range">
+            <br>
+            <input type="text" name="email" placeholder="Email">
+            <br>
+            <input type="text" name="dateOpen" placeholder="Date Open">
+            <br>
+            <input type="text" name="website" placeholder="Website">
+            <br>
+            <input type="text" name="boardWebsite" placeholder="Board Website">
             <br>
             <input type="submit" name="addSchool" value="Add">
         </form>
