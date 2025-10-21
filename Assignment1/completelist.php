@@ -16,7 +16,7 @@
 
     <?php
 
-        echo '<h1>Client Name</h1>';
+        echo '<h1>Clients</h1>';
 
         require('connect.php');
             
