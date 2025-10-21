@@ -11,25 +11,20 @@
 
     <div>
         <?php include('nav.php'); ?>
+
     </div>
 
     <div>
         <?php
 
-        require('connect.php');
+        echo '<h3>About the Permits</h3>';
+
+        echo '<p>The Noise Bylaw provides standards for noise in Toronto. This includes decibel limits and time restrictions for some types of noise. </p>
         
-        $query = 'SELECT * FROM permits';
+        <p> Individuals and organizations can apply for a noise exemption permit for specific events or activities that may be in contravention of the Noise Bylaw if all application requirements are met. </p>
+        
+        <p><a href="https://www.toronto.ca/city-government/public-notices-bylaws/bylaw-enforcement/noise/">More information bout Noise Enforcement (external site)</p>'
 
-        $permit = mysqli_query($connect,$query);
-
-        foreach($permit as $permit) {
-
-            echo '<h3 class="card-title">' . $permit['licence_number'] . '</h3>
-            <h4 class="card-title">Permit Type: ' . $permit['permit_type'] . '</h4>
-            <p class="card-text">Operating Name: ' . $permit['operating_name'] . '</p>
-            <p class="card-text">Ward: ' . $permit['ward'] . '</p>
-            <span class="badge bg-secondary">Client Name: ' . $permit['client_name'] . '</span>';
-        }
 
         ?>
     </div>

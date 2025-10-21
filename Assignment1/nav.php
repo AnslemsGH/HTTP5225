@@ -7,12 +7,12 @@
                    Home
                 </a>
             </li>
-            <!-- <li>
-                <a href="addschool.php" 
+            <li>
+                <a href="completelist.php" 
                    style="text-decoration: none; color: #ffffff; font-size: 1.1rem; font-weight: 500; transition: color 0.3s ease;">
-                   Add School
+                   All Permits
                 </a>
-            </li> -->
+            </li>
         </ul>
     </div>
 </nav>
