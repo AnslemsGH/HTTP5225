@@ -13,7 +13,10 @@
         <?php include('nav.php'); ?>
 
     </div>
+
     <?php
+
+        echo '<h1>Client Name</h1>';
 
         require('connect.php');
             
@@ -24,7 +27,6 @@
         foreach($permit as $permit) {
 
             $clientname = $permit['client_name'];
-
 
             echo  $clientname . '
                 <form action="permit.php">
@@ -38,3 +40,7 @@
 
 
     ?>
+
+</body>
+
+</html>

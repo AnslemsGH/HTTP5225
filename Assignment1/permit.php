@@ -9,26 +9,41 @@
         
     <h1 style="text-align: center;">Toronto Noise Exemption Permits</h1>
 
-        <div>
-            <?php include('nav.php'); ?>
-        </div>
+    <div>
+        <?php include('nav.php'); ?>
+    </div>
 
     <?php
 
-    require('connect.php');
+        require('connect.php');
 
-            if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['_id'])) {
-                $id = $_GET['_id'];
-                $query = "SELECT * FROM permits WHERE _id=$id";
-                $result = mysqli_query($connect, $query);
-                $permit = $result->fetch_assoc();
+        if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['_id'])) {
+            $id = $_GET['_id'];
+            $query = "SELECT * FROM permits p JOIN wards w ON p.ward = w.ward_id WHERE p._id = $id";
+            $result = mysqli_query($connect, $query);
+            $permit = $result->fetch_assoc();
 
-            echo '<h2 class="card-title">Permit Type: ' . $permit['permit_type'] . '</h2>
-            <p class="card-text">Operating Name: ' . $permit['operating_name'] . '</p>
-            <p class="card-text">Ward: ' . $permit['ward'] . '</p>
-            <span class="badge bg-secondary">Client Name: ' . $permit['client_name'] . '</span>
-            <br>------------------------------------'; 
-            }
+            echo '<div>
+            <strong class="card-title"> Client Name: ' . $permit['client_name'] . '</strong>
+            <p>Licence Number: ' . $permit['licence_number'] . '</p>
+            <p >Operating Name: ' . $permit['operating_name'] . '</p>
+            <p>Address: ' . $permit['address'] . '</p>
+            <p>Location name: ' . $permit['location_name'] . '</p>
+            <p>Issue Date: ' . $permit['issue_date'] . '</p>
+            <p>End Date(expected): ' . $permit['expected_end_date'] . '</p>
+            <p>End Date(actual): ' . $permit['actual_end_date'] . '</p>
+            <p>Ward: ' . $permit['ward'] . ', ' . $permit['ward_name'] . '</p>
+            <span>Permit Type: ' . $permit['permit_type'] . '</span>
+            <br>------------------------------------
+            </div>'; 
+        }
+
+    ?>
+
+</body>
+
+</html>
+
 
 
 
