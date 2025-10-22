@@ -16,9 +16,11 @@
 
     </div>
 
+  <div class="row">
+
     <?php
 
-        echo '<h1>Clients</h1>';
+        echo '<h3 style="text-align: center;">Permit Holders</h3>';
 
         require('connect.php');
             
@@ -26,21 +28,28 @@
 
         $permit = mysqli_query($connect,$query);
 
+
         foreach($permit as $permit) {
 
             $clientname = $permit['client_name'];
 
-            echo  $clientname . '
-                <form action="permit.php">
+            echo '<div class="d-block p-2 mb-3 col-md-4 mt-2 mb-2">
+            <div class="card text-bg-secondary mb-3 p-2" style="max-width: 25rem;">' . $clientname . '
+                <form action="permit.php" class="row-cols-lg-auto g-3 align-items-center">
+                    <div class="col-12">
                     <input type="hidden" name="_id" value="' . $permit['_id'] . '">
-                    <button type="submit" class="btn btn-sm btn-primary">View Permit</button>
+                    <button type="submit" class="btn btn-primary">View Permit</button>
+                    </div>
                 </form>
-                <br></br>';
+                </div>
+                </div>';
 
         }
 
 
+
     ?>
+    </div>
 
 </body>
 

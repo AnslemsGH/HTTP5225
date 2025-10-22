@@ -9,11 +9,13 @@
 </head>
 <body>
         
-    <h1>Toronto Noise Exemption Permits</h1>
+    <h1 style="text-align: center;">Toronto Noise Exemption Permits</h1>
 
     <div>
         <?php include('nav.php'); ?>
     </div>
+
+    <div class="d-flex justify-content-center">
 
     <?php
 
@@ -25,8 +27,9 @@
             $result = mysqli_query($connect, $query);
             $permit = $result->fetch_assoc();
 
-            echo '<div class="container-fluid">
-            <strong> Client Name: ' . $permit['client_name'] . '</strong>
+            echo '<br></br><div class="card text-bg-secondary mb-3 " style="max-width: 25rem;">
+            <div class="card-header">' . $permit['client_name'] . '</div>
+            <div class="card-body">
             <p>Licence Number: ' . $permit['licence_number'] . '</p>
             <p>Operating Name: ' . $permit['operating_name'] . '</p>
             <p>Address: ' . $permit['address'] . '</p>
@@ -35,10 +38,13 @@
             <p>End Date(expected): ' . $permit['expected_end_date'] . '</p>
             <p>End Date(actual): ' . $permit['actual_end_date'] . '</p>
             <p>Ward: ' . $permit['ward'] . ', ' . $permit['ward_name'] . '</p>
+            </div>
             </div>'; 
         }
 
     ?>
+
+    </div>
 
 </body>
 

@@ -1,5 +1,5 @@
 <nav class="navbar bg-primary" data-bs-theme="dark" style="text-align: center;">
-    <div class="container-fluid">
+    <div class="container-fluid" style="display: flex; justify-content: center; align-items: center;">
         <ul style="list-style: none; display: flex; gap: 2rem; margin: 0; padding: 0;">
             <li>
                 <a href="index.php" 
