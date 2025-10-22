@@ -25,7 +25,7 @@
         
         <p> Individuals and organizations can apply for a noise exemption permit for specific events or activities that may be in contravention of the Noise Bylaw if all application requirements are met. </p>
         
-        <p><a href="https://www.toronto.ca/city-government/public-notices-bylaws/bylaw-enforcement/noise/">More information bout Noise Enforcement (external site)</p>'
+        <p><a href="https://www.toronto.ca/city-government/public-notices-bylaws/bylaw-enforcement/noise/" class="link-success">More information bout Noise Enforcement (external site)</p>'
 
 
         ?>

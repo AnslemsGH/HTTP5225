@@ -14,6 +14,7 @@
     <div>
         <?php include('nav.php'); ?>
     </div>
+    <br></br>
 
     <div class="d-flex justify-content-center">
 
@@ -28,7 +29,7 @@
             $permit = $result->fetch_assoc();
 
             echo '<br></br><div class="card text-bg-secondary mb-3 " style="max-width: 25rem;">
-            <div class="card-header">' . $permit['client_name'] . '</div>
+            <div class="card-header" style="text-align: center;">' . $permit['client_name'] . '</div>
             <div class="card-body">
             <p>Licence Number: ' . $permit['licence_number'] . '</p>
             <p>Operating Name: ' . $permit['operating_name'] . '</p>
