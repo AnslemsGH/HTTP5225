@@ -8,16 +8,23 @@
 <div class ="row">
     @foreach ($students  as $student)
     <div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title">{{$student -> fname}} {{ $student -> lname}}</h5>
-    <a href="mailto: {{ $student -> email }}" class="btn btn-primary">{{ $student -> email }}</a>
-  </div>
-  <div class="card-footer">
-    <a href="{{ route('students.edit', $student -> id)}}" class="btn btn-sm btn-success">Edit</a>
-</div>
-</div>
+      <div class="card-body">
+        <h5 class="card-title">{{$student -> fname}} {{ $student -> lname}}</h5>
+        <a href="mailto: {{ $student -> email }}" class="btn btn-primary">{{ $student -> email }}</a>
+      </div>
+      <div class="card-footer">
+        <a href="{{ route('students.edit', $student -> id)}}" class="btn btn-sm btn-success">Edit</a>
+        <form action="{{ route('students.destroy',$student -> id)}}" method="POST">
+          @method('DELETE')
+          {{ csrf_field() }}
+          <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+        </form>  
+      </div>
+    </div>
         
     @endforeach
+
+</div>
 
 @endsection
 
