@@ -18,14 +18,9 @@ class CourseFactory extends Factory
     {
         return [
             //
-            'coursename'=> fake() -> randomElement([
-            'PHP',
-            'LARAVEL',
-            'Full-Stack',
-            'Database',
-            'JavaScript'
-        ]),
+            'coursename'=> fake() -> word(),
             'professor'=> fake() -> firstName(),
+            'description'=> fake() -> sentence(),
         ];
     }
 }

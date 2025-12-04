@@ -11,7 +11,7 @@ class UpdateCourseRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,7 +23,8 @@ class UpdateCourseRequest extends FormRequest
     {
         return [
             'coursename'=>'required|string',
-            'professor'=>'required|string'
+            'professor'=>'required|string',
+            'description'=>'required|string'
         ];
     }
 }

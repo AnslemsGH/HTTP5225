@@ -9,6 +9,8 @@
     <br><br>
     <input type="text" name="professor" value="{{ $course -> professor }}">
     <br><br>
+    <input type="text" name="description" value="{{ $course -> description }}">
+    <br><br>
     <input type="submit" value="Update Course">
 
 

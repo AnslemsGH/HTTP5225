@@ -9,6 +9,8 @@
     <br><br>
     <input type="text" name="professor" placeholder="Professor's Name">
     <br><br>
+    <input type="text" name="description" placeholder="Course Description">
+    <br><br>
     <input type="submit" value="Add Course">
 </form>
 

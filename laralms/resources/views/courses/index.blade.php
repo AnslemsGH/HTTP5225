@@ -7,12 +7,13 @@
 @foreach ($courses as $course)
     {{
         $course -> coursename
-        <form action="{{ route('courses.destroy',$course -> id)}}" method="POST">
+    }} 
+            <form action="{{ route('courses.destroy',$course -> id)}}" method="POST">
             @method('DELETE')
             {{ csrf_field() }}
             <button type="submit">Delete</button>
     </form>
-    }} <br>
+    <br>
 @endforeach
 
 

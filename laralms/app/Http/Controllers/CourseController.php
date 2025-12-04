@@ -31,7 +31,7 @@ class CourseController extends Controller
      */
     public function store(StoreCourseRequest $request)
     {
-        course::create($request->validated());
+        Course::create($request->validated());
         return redirect() -> route('courses.index');
     }
 

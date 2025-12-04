@@ -11,7 +11,7 @@ class StoreCourseRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,8 @@ class StoreCourseRequest extends FormRequest
         return [
             //
             'coursename'=>'required|string',
-            'professor'=>'required|string'
+            'professor'=>'required|string',
+            'description'=>'required|string'
         ];
     }
 }
