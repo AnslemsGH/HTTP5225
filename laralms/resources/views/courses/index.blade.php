@@ -13,11 +13,6 @@
             </div>
 
             <div class="card-body">
-                <p class="card-text mb-1">
-                    <strong class="text-success">Professor:</strong> 
-                    {{ $course->professor }}
-                </p>
-
                 <p class="card-text">
                     <strong class="text-success">Description:</strong><br>
                     {{ $course->description }}

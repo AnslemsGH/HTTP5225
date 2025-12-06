@@ -5,13 +5,11 @@
 <form action="{{ route('courses.update', $course -> id) }}" method="POST">
     @method('PUT')
     {{ csrf_field() }}
-    <input type="text" name="coursename" value="{{ $course -> coursename }}">
+    <input type="text"  class="form-control" name="coursename" value="{{ $course -> coursename }}">
     <br><br>
-    <input type="text" name="professor" value="{{ $course -> professor }}">
+    <input type="text"  class="form-control" name="description" value="{{ $course -> description }}">
     <br><br>
-    <input type="text" name="description" value="{{ $course -> description }}">
-    <br><br>
-    <input type="submit" value="Update Course">
+    <input type="submit" value="Update Course" class="btn btn-primary">
 
 
 </form>

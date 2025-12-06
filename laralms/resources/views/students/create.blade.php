@@ -22,23 +22,23 @@
 
 <form action="{{ route('students.store') }}" method="POST">
     {{ csrf_field() }}
-    <input type="text" name="fname" placeholder="First Name">
+    <input type="text"  class="form-control" name="fname" placeholder="First Name">
     @error('fname')
         <span class="text-danger">
             {{$message}}
         </span>
     @enderror
     <br><br>
-    <input type="text" name="lname" placeholder="Last Name">
+    <input type="text"  class="form-control" name="lname" placeholder="Last Name">
     @error('lname')
             <span class="text-danger">
             {{$message}}
         </span>
     @enderror
     <br><br>
-    <input type="email" name="email" placeholder="Email">
+    <input type="email"  class="form-control" name="email" placeholder="Email">
     <br><br>
-    <input type="submit" value="Add Student">
+    <input type="submit" value="Add Student" class="btn btn-primary">
 </form>
 
 @endsection

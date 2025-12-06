@@ -24,7 +24,6 @@ class StoreCourseRequest extends FormRequest
         return [
             //
             'coursename'=>'required|string',
-            'professor'=>'required|string',
             'description'=>'required|string'
         ];
     }
