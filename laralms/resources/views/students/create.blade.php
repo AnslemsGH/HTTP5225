@@ -3,7 +3,7 @@
 
 <h3>Add a Student</h3>
 
-<div class="container">
+<!-- <div class="container">
     <div class="row">
         <div class="col">
             @if($errors -> any())
@@ -18,7 +18,7 @@
             @endif
         </div>
     </div>
-</div>
+</div> -->
 
 <form action="{{ route('students.store') }}" method="POST">
     {{ csrf_field() }}
@@ -37,6 +37,11 @@
     @enderror
     <br><br>
     <input type="email"  class="form-control" name="email" placeholder="Email">
+        @error('email')
+        <span class="text-danger">
+            {{$message}}
+        </span>
+    @enderror
     <br><br>
     <input type="submit" value="Add Student" class="btn btn-primary">
 </form>

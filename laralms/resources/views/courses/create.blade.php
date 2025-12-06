@@ -6,10 +6,20 @@
 <form action="{{ route('courses.store') }}" method="POST" >
     {{ csrf_field() }}
     <div class="form-group">
-    <input type="text" class="form-control" name="coursename" placeholder="Course Name" required>
+    <input type="text" class="form-control" name="coursename" placeholder="Course Name">
+        @error('coursename')
+        <span class="text-danger">
+            {{$message}}
+        </span>
+    @enderror
     </div>
     <br><br>
     <input type="text" class="form-control" name="description" placeholder="Course Description">
+        @error('description')
+        <span class="text-danger">
+            {{$message}}
+        </span>
+    @enderror
     <br><br>
     <input type="submit" value="Add Course" class="btn btn-primary">
 </form>
