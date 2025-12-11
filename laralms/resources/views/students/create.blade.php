@@ -43,6 +43,12 @@
         </span>
     @enderror
     <br><br>
+    <label>Select a course:</label><br>
+        @foreach ($courses as $course)
+        <input type="checkbox" name="courses[]" value="{{$course->id}}">{{$course-> coursename}}</input>
+            <br>
+        @endforeach
+        <br>
     <input type="submit" value="Add Student" class="btn btn-primary">
 </form>
 

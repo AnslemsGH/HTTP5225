@@ -21,6 +21,15 @@
         </span>
     @enderror
     <br><br>
+        <label>Select a Professor:</label><br>
+        <select name="professor_id" id="professor_id" class="form-select form-select-lg border-primary shadow-sm">
+            <option value="" selected disabled>Select a Professor</option>
+        @foreach ($professors as $professor)
+        <option value="{{$professor->id}}">{{$professor-> professorname}}</option>
+        @endforeach
+        </select>
+        <br>
+
     <input type="submit" value="Add Course" class="btn btn-primary">
 </form>
 

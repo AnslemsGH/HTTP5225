@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Professor;
+use App\Models\Student;
 use App\Models\Course;
 use App\Http\Requests\StoreCourseRequest;
 use App\Http\Requests\UpdateCourseRequest;
@@ -18,12 +20,17 @@ class CourseController extends Controller
         ]);
     }
 
+    public function coursesbystudent($id){
+        $student = Student::find($id);
+        dd($student -> courses);
+    }
+
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        return view('courses.create');
+        return view('courses.create')->with('professors', Professor::all());
     }
 
     /**
@@ -48,7 +55,7 @@ class CourseController extends Controller
      */
     public function edit(Course $course)
     {
-        return view('courses.edit', compact('course'));
+        return view('courses.edit', compact('course'))->with('professors', Professor::all());
     }
 
     /**

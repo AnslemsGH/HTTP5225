@@ -19,6 +19,16 @@
         </span>
     @enderror
     <br><br>
+    <label for="professor_id" class="form-label">Professor</label>
+        <select name="professor_id" id="professor_id" class="form-select form-select-lg rounded-3 shadow-sm" required>
+            <option value="" disabled>Select a Professor</option>
+
+            @foreach ($professors as $professor)
+                <option value="{{ $professor->id }}" {{ $course->professor_id == $professor->id ? 'selected' : '' }}>{{ $professor->professorname }}
+                </option>
+            @endforeach
+        </select>
+        <br>
     <input type="submit" value="Update Course" class="btn btn-primary">
 
 
